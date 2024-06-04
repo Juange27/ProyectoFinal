@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login Estudiante - Vingles UTS</title>
+	<link rel="stylesheet" href="/css/login.css">
+	<link rel="icon" href="/uts.svg" />
+</head>
+
+<body>
+	<div class="navbar">
+		<a th:href="@{/}">Inicio</a>
+	</div>
+
+	<div class="container">
+		<img src="https://www.uts.edu.co/sitio/wp-content/uploads/2019/10/Logo-UTS-1.png" class="logo-img">
+		<div class="login-box">
+			<img src="https://img.freepik.com/psd-gratis/retrato-estudio-joven-estudiante-adolescente_23-2150162514.jpg"
+				alt="Estudiante" class="student-img">
+			<h1>Login Estudiante</h1>
+			<form th:action="@{/iniciarsesion/estudiante/}" method="post">
+				<input type="text" name="correo" placeholder="Correo de usuario" required>
+				<input type="password" name="contrasena" placeholder="Contraseña" required>
+				<p th:if="${mensaje}" style="color: red; font-size: 12px;">Error, correo o contraseña incorrectas</p>
+				<button type="submit">Ingresar</button>
+			</form>
+		</div>
+	</div>
+</body>
+
+</html>

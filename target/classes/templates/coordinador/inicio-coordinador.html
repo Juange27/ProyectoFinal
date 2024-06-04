@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Panel de Coordinador - Lista estudiantes</title>
+	<link rel="stylesheet" href="/css/coordinador.css">
+	<link rel="icon" href="/img/uts.svg" />
+</head>
+
+<body>
+	<div class="navbar">
+		<a th:href="@{/}">Cerrar Sesión</a>
+		<span> Bienvenido, <strong th:text="${coordinador.nombre} + ' ' + ${coordinador.apellido}"></strong></span>
+	</div>
+	<div class="container">
+		<center>
+			<img src="https://www.uts.edu.co/sitio/wp-content/uploads/2019/10/Logo-UTS-1.png" class="logo-img">
+		</center>
+		<h1>Lista de Estudiantes</h1>
+		<a th:href="@{/coordinador/agregar-estudiante/{id}/(id=${coordinador.id})}" class="agregar-btn">Agregar
+			alumno</a>
+		<div class="table-container">
+			<table>
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Id</th>
+						<th>Nombre</th>
+						<th>Apellido</th>
+						<th>Correo</th>
+						<th>Contraseña</th>
+						<th>Acciones</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="estudiante, iterStat : ${estudiante}">
+						<td th:text="${iterStat.count}"></td>
+						<td th:text="${estudiante.id}"></td>
+						<td th:text="${estudiante.nombre}"></td>
+						<td th:text="${estudiante.apellido}"></td>
+						<td th:text="${estudiante.correo}"></td>
+						<td th:text="${estudiante.contrasena}"></td>
+						<td>
+							<a
+								th:href="@{/coordinador/editar-estudiante/{coordinadorId}/{estudianteId}/(coordinadorId=${coordinador.id}, estudianteId=${estudiante.id})}">Editar</a>
+							<a th:href="@{/coordinador/eliminar-estudiante/{id}/{estudianteId}/(id=${coordinador.id}, estudianteId=${estudiante.id})}"
+								onclick="return confirm('¿Está seguro de que quiere eliminar este estudiante?')">Borrar</a>
+							<a
+								th:href="@{/coordinador/ver-notas/{coordinadorId}/{estudianteId}/(coordinadorId=${coordinador.id}, estudianteId=${estudiante.id})}">Notas</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+
+</html>

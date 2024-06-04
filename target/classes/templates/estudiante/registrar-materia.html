@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Registro de materias</title>
+	<link rel="stylesheet" href="/css/materias.css">
+	<link rel="icon" href="/img/uts.svg" />
+</head>
+
+<body>
+	<div class="navbar">
+		<a th:href="@{/}">Cerrar Sesión</a>
+		<span> Bienvenido, <strong th:text="${estudiante.nombre} + ' ' + ${estudiante.apellido}"></strong></span>
+	</div>
+	<p th:if="${error}" style="color: red; font-size: 12px;">No puede matricularse en una materia de nivel igual o menor al existente, ni mayor a la correspondiente</p>
+	<div class="container">
+		<center>
+			<img src="https://www.uts.edu.co/sitio/wp-content/uploads/2019/10/Logo-UTS-1.png" class="logo-img">
+			<h1>Registro de materias</h1>
+			<form th:action="@{/estudiante/guardar-materia/{id}/(id=${estudiante.id})}" method="post"
+				th:object="${estudiante}">
+				<div class="hidden">
+					<label for="id">ID:</label>
+					<input type="text" id="id" name="id">
+				</div>
+				<div>
+					<label for="estudiante">Estudiante ID:</label>
+					<input type="text" id="estudiante" name="estudiante" th:value="${estudiante.id}" readonly>
+				</div>
+				<div>
+					<label for="materia">Materia:</label>
+					<select id="materia" name="materia">
+						<option value="">Selecciona una materia</option>
+						<option th:each="materia : ${materia}" th:value="${materia.id}" th:text="${materia.nombre}">
+						</option>
+					</select>
+				</div>
+				<div class="hidden">
+					<label for="placementTest">Placement Test:</label>
+					<input type="text" id="placementTest" name="placementTest" value="0">
+				</div>
+				<div class="hidden">
+					<label for="foroActivity1">Foro Activity 1:</label>
+					<input type="text" id="foroActivity1" name="foroActivity1" value="0">
+				</div>
+				<div class="hidden">
+					<label for="foroActivity2">Foro Activity 2:</label>
+					<input type="text" id="foroActivity2" name="foroActivity2" value="0">
+				</div>
+				<div class="hidden">
+					<label for="speaking">Speaking:</label>
+					<input type="text" id="speaking" name="speaking" value="0">
+				</div>
+				<div class="hidden">
+					<label for="writing">Writing:</label>
+					<input type="text" id="writing" name="writing" value="0">
+				</div>
+				<div class="hidden">
+					<label for="autoevaluacion">Autoevaluación:</label>
+					<input type="text" id="autoevaluacion" name="autoevaluacion" value="0">
+				</div>
+				<div class="hidden">
+					<label for="testFinal">Test Final:</label>
+					<input type="text" id="testFinal" name="testFinal" value="0">
+				</div>
+				<div class="hidden">
+					<label for="notaFinal">Nota Final:</label>
+					<input type="text" id="notaFinal" name="notaFinal" value="0">
+				</div>
+				<button type="submit">Enviar</button>
+			</form>
+		</center>
+	</div>
+</body>
+
+</html>

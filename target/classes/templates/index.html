@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Inicio - Vingles UTS</title>
+	<link rel="stylesheet" href="/css/inicio.css">
+	<link rel="icon" href="/img/uts.svg" />
+</head>
+
+<body>
+    <div class="container">
+		<div class="navbar">
+		    <a th:href="@{/}">Inicio</a>
+		    <div class="right">
+		        <a th:href="@{/login-estudiante/}">Estudiantes</a>
+		        <a th:href="@{/login-coordinador/}">Coordinadores</a>
+		    </div>
+		</div>
+		<img src="https://www.uts.edu.co/sitio/wp-content/uploads/2019/10/Logo-UTS-1.png" class="logo-img">
+        <h1>¿Cuál es tu rol?</h1>
+        <div class="cards">
+            <div class="card">
+                <img src="https://img.freepik.com/foto-gratis/empresario-muestra-su-dedo-arriba_329181-9112.jpg" alt="Coordinador">
+                <div class="card-content">
+                    <h2>Coordinador</h2>
+					<a th:href="@{/login-coordinador/}" class="button-en">Entrar</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://img.freepik.com/psd-gratis/retrato-estudio-joven-estudiante-adolescente_23-2150162514.jpg" alt="Estudiante">
+                <div class="card-content">
+                    <h2>Estudiante</h2>
+					<a th:href="@{/login-estudiante/}" class="button-en">Entrar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+</html>
