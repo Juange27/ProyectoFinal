@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Panel de Coordinador</title>
+	<link rel="stylesheet" href="/css/coordinador.css">
+	<link rel="icon" href="/img/uts.svg" />
+</head>
+
+<body>
+	<div class="navbar">
+		<a th:href="@{/}">Cerrar Sesión</a>
+		<span> Bienvenido, <strong th:text="${coordinador.nombre} + ' ' + ${coordinador.apellido}"></strong></span>
+	</div>
+	<div class="container">
+		<center>
+			<img src="https://www.uts.edu.co/sitio/wp-content/uploads/2019/10/Logo-UTS-1.png" class="logo-img">
+		</center>
+		<h1>Registro de Estudiantes</h1>
+		<form th:action="@{/coordinador/guardar-estudiante/{id}/(id=${coordinador.id})}" method="post">
+			<div>
+				<label for="id">ID:</label>
+				<input type="text" id="id" name="id" th:value="${estudiante.id}" readonly>
+			</div>
+			<div>
+				<label for="nombre">Nombre:</label>
+				<input type="text" id="nombre" name="nombre" th:value="${estudiante.nombre}">
+			</div>
+			<div>
+				<label for="apellido">Apellido:</label>
+				<input type="text" id="apellido" name="apellido" th:value="${estudiante.apellido}">
+			</div>
+			<div>
+				<label for="correo">Correo:</label>
+				<input type="email" id="correo" name="correo" th:value="${estudiante.correo}">
+			</div>
+			<div>
+				<label for="contrasena">Contraseña:</label>
+				<input type="password" id="contrasena" name="contrasena" th:value="${estudiante.contrasena}">
+			</div>
+			<button type="submit" class="agregar-btn">Agregar</button>
+		</form>
+	</div>
+</body>
+
+</html>

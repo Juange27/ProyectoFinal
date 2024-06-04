@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Detalles del Estudiante</title>
+	<link rel="stylesheet" href="/css/estudiante.css">
+	<link rel="icon" href="/img/uts.svg" />
+</head>
+
+<body>
+	<div class="navbar">
+		<a th:href="@{/}">Cerrar Sesión</a>
+		<span> Bienvenido, <strong th:text="${estudiante.nombre} + ' ' + ${estudiante.apellido}"></strong></span>
+	</div>
+	<div class="container">
+		<center>
+			<img src="https://www.uts.edu.co/sitio/wp-content/uploads/2019/10/Logo-UTS-1.png" class="logo-img">
+		</center>
+		<h1>Detalles del Estudiante</h1>
+		<ul>
+			<li><strong>ID:</strong> <span th:text="${estudiante.id}"></span></li>
+			<li><strong>Nombre:</strong> <span th:text="${estudiante.nombre}"></span></li>
+			<li><strong>Apellido:</strong> <span th:text="${estudiante.apellido}"></span></li>
+			<li><strong>Correo:</strong> <span th:text="${estudiante.correo}"></span></li>
+			<li><strong>Contraseña:</strong> <span th:text="${estudiante.contrasena}"></span></li>
+		</ul>
+		<h2>Materias:</h2>
+		<div class="table-container">
+			<table>
+				<thead>
+					<tr>
+						<th>Materia</th>
+						<th>Placement Test</th>
+						<th>Foro Activity 1</th>
+						<th>Foro Activity 2</th>
+						<th>Speaking</th>
+						<th>Writing</th>
+						<th>Autoevaluacion</th>
+						<th>Test Final</th>
+						<th><strong>Nota Final</strong></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="calificacion : ${calificacion}">
+						<td th:text="${calificacion.materia.nombre}"></td>
+						<td th:text="${calificacion.placementTest}"></td>
+						<td th:text="${calificacion.foroActivity1}"></td>
+						<td th:text="${calificacion.foroActivity2}"></td>
+						<td th:text="${calificacion.speaking}"></td>
+						<td th:text="${calificacion.writing}"></td>
+						<td th:text="${calificacion.autoevaluacion}"></td>
+						<td th:text="${calificacion.testFinal}"></td>
+						<td th:text="${calificacion.notaFinal}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="button-container">
+			<a th:href="@{/estudiante/matricular-materia/{id}/(id=${estudiante.id})}"
+				class="matricular-button">Matricular Materia</a>
+		</div>
+	</div>
+</body>
+
+</html>

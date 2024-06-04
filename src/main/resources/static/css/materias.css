@@ -1,0 +1,120 @@
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f2f2f2;
+
+}
+
+h2,
+h1 {
+	padding: 10px 0 10px 0;
+}
+
+.container {
+	
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+	/* Aumenta la sombra */
+	transition: box-shadow 0.3s ease;
+	/* Añade transición a la sombra */
+}
+
+.container:hover {
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+	/* Cambia la sombra al pasar el ratón */
+}
+
+.navbar {
+	background-color: #004a67;
+	overflow: hidden;
+	margin-bottom: 30px;
+	color: #ffffff;
+}
+
+.navbar a {
+	float: left;
+	display: block;
+	color: #ffffff;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar span {
+	float: left;
+	display: block;
+	color: #C3D730;
+	text-align: end;
+	padding: 14px 0 0 30px;
+	font-size: 20px;
+}
+
+.navbar a:hover {
+	background-color: #005A7A;
+}
+
+.navbar .right {
+	float: right;
+}
+
+.logo-img {
+	height: 120px;
+}
+
+
+/* Estilos del formulario */
+form {
+	background: #fff;
+	padding: 20px;
+	border-radius: 8px;
+	max-width: 400px;
+	width: 100%;
+}
+
+label {
+	display: block;
+	margin-bottom: 8px;
+	font-weight: bold;
+	color: #333;
+}
+
+input[type="text"],
+select {
+	width: calc(100% - 20px);
+	padding: 10px;
+	margin-bottom: 20px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+input[readonly] {
+	background-color: #e9e9e9;
+}
+
+button {
+	width: 100%;
+	padding: 10px;
+	background-color: #4CAF50;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+button:hover {
+	background-color: #45a049;
+}
+
+/* Ocultar campos */
+.hidden {
+	display: none;
+}

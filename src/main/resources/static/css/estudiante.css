@@ -1,0 +1,121 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    
+}
+
+h2 ,h1{
+	padding: 10px 0 10px 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Aumenta la sombra */
+    transition: box-shadow 0.3s ease; /* Añade transición a la sombra */
+}
+
+.container:hover {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4); /* Cambia la sombra al pasar el ratón */
+}
+
+.navbar {
+    background-color: #004a67;
+    overflow: hidden;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #ffffff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar span {
+    float: left;
+    display: block;
+    color: #C3D730;
+    text-align: end;
+	padding: 14px 0 0 30px;
+    font-size: 20px;
+}
+
+.navbar a:hover {
+    background-color: #005A7A;
+}
+
+.navbar .right {
+    float: right;
+}
+
+.logo-img{
+    height: 120px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+strong{
+    color: #C3D730;
+    font-weight: 600;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.matricular-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #004a67;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.matricular-button:hover {
+    background-color: #005A7A;
+}
